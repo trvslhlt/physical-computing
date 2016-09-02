@@ -1,0 +1,6 @@
+Error during program upload
+
+avrdude: ser_open(): can't open device "COM1": No such file or directory
+ioctl("TIOCMGET"): Inappropriate ioctl for device
+
+fix: In IDE, Tools > Port > serial port
