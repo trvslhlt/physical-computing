@@ -9,7 +9,7 @@ void setup() {
 }
 
 void loop() {
-  if (numeralToFlash == '\0') { // if we have a number to flash
+  if (numeralToFlash == '\0') {
     return;  
   } else {
     flashNumeral();
