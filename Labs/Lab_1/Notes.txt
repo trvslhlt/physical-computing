@@ -4,3 +4,137 @@ avrdude: ser_open(): can't open device "COM1": No such file or directory
 ioctl("TIOCMGET"): Inappropriate ioctl for device
 
 fix: In IDE, Tools > Port > serial port
+http://askubuntu.com/questions/646254/arduino-serial-port-com1-problem
+
+areas of expertise
+- music
+- literature
+- ios
+- teaching
+- fitness
+
+
+
+
+
+Sending me
+
+
+
+
+Procedurally generated applications
+
+remember when
+  everyone had to listen to the same music at a party?
+  our bodies user to turn food into hair?
+  you had to eat breakfast after you woke up?
+  you had to talk to your computer with your fingertips
+
+
+#rememberwhen you didn't get composition suggestions based on a message's recipient. [e.g. "]
+
+
+#featureinsearchofaproduct
+#confinedspace
+
+
+AC car seat
+
+showers
+
+
+
+
+What are outstanding problems in health?
+
+
+
+ML that identifies personal habits, encouraging us to reform undesirable behavior and reinforce positive patterns.
+
+
+
+
+651 767 7921 Kyle, Infor
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------
+Deborah Estrin Meeting Notes (9/7/16)
+
+WHY we should work on this problem?
+  constrain the problem or perish. initial constraints:
+    IoT
+    ER
+    Short to medium term impact (1-5 years) [we want to test and iterate against a plausible real environment]
+    Urban american ERs
+  Just choose these constraints (IoT and ER) and go. But, put a little effort into identifying and examining different sources of information to justify direction. This will also help us build the stories about what happens in the ER and why - like how each information stream contributes to a health outcome
+  DON'T: Look into sussing out non-emergency ER patients (ones to divert to urgent care). much of the work needed here is underway
+
+HOW should we start (not exhaustive, only topics explicitly discussed):
+  Describe the ER triage context. Try to build a story around it. Which details are standard? Which are variable? In what ways?
+  What are the primary workflows around the ER experience? Build stories around the workflows to gain understanding and raise questions.
+    clinical
+    patient
+    companions / family
+  Look into operations research around the ER
+    OR faculty (Itai Gurvich) -> Send clean email to Deborah inquire about discovering OR  (write to Deborah and she will handle intro framing)
+  What information is available through what sensors? How can that be communicated?
+  Check out accelerators and startups: ROCK health, Startup health, blueprint
+
+
+WHO to interview? [butchered the spelling, need to look these people up and then go through Deborah]
+  OR faculty (Itai Gurvich) -> Send clean email to Deborah inquire about discovering OR  (write to Deborah and she will handle intro framing)
+  Nitti Parc (husband on faculty, relative is an ER doc -> into on follow through to previous point)(spelling?) building maker space
+  TEDmed talk on ul Reesa Lewis - ultrasound in the er
+  NYC woman, ER doc, aussie -> tons of hands on knowledge - Nadine Levic, ambulance instrumentation --------
+---------------------------------------
+- description of the triage context (range, standards) -> what are the problems
+- look into workflows to identify problems
+- aspects
+    clinical
+    patient
+    family
+
+Why parameterize IoT
+  giving context to IoT
+  name information flows to identify
+
+
+Why work on the near to medium term?
+  churn in tech leaves us with nothing to test
+
+What sensors are not just possible, but available
+  also processing techniques
+
+Xprize -
+
+tricorder (star trek?) ->
+
+
+How can we learn state of art and near future?
+  (look into OR)
+  OR faculty (Grevich) -> Send clean email to Deborah inquire about discvering or research (write to Deborah)
+  ROCK health, Startup health, blueprint
+  Nitti Parc (husband on faculty, relative is an ER doc -> into on follow through to previous point)(spelling?) building maker space
+  TEDmed talk on ul Reesa Lewis - ultrasound in the er
+  NYC woman, ER doc, aussie -> tons of hands on knowledge - Nadine Levic, ambulance instrumentation --------
+  Context, constrain! Resources, localities
+
+
+  old issues
+    move non-emergency patients
+
+
+
+
+Who to interview?

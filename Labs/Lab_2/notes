@@ -1,0 +1,17 @@
+resistors
+  220 ohms    and   5 % tolerance
+LED matrix
+  LTP-757G-03
+static shift registers
+  cd4021be
+
+technique
+  how to display patterns -> rotate quickly throught the columns
+  http://embedded-lab.com/blog/lab-12-basics-of-led-dot-matrix-display/
+
+Clock moves the data down the register.
+Data is the ones and zeros to be shifted in/out (theres a data in and out)
+Latch moves the data from the shift register to the output register.
+
+report
+  https://circuits.io/circuits/444111-shift-register
