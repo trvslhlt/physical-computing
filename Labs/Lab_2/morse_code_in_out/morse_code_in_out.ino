@@ -7,7 +7,7 @@ bool buttonIntent = false; // true if pressed
 bool lastButtonState = false;
 int DOT = 0;
 int DASH = 1;
-int dotDashPattern[5] = {-1, -1, -1, -1, -1};
+int dotDashPattern[5] = { -1, -1, -1, -1, -1};
 
 unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = 50;
@@ -21,76 +21,88 @@ int rowPin[5] = {3, 4, 1, 6, 7};
 int colPin[5] = {2, 0, 5};
 
 int code[10][5] = {{1, 1, 1, 1, 1},
-                   {0, 1, 1, 1, 1},
-                   {0, 0, 1, 1, 1},
-                   {0, 0, 0, 1, 1},
-                   {0, 0, 0, 0, 1},
-                   {0, 0, 0, 0, 0},
-                   {1, 0, 0, 0, 0},
-                   {1, 1, 0, 0, 0},
-                   {1, 1, 1, 0, 0},
-                   {1, 1, 1, 1, 0}};
+  {0, 1, 1, 1, 1},
+  {0, 0, 1, 1, 1},
+  {0, 0, 0, 1, 1},
+  {0, 0, 0, 0, 1},
+  {0, 0, 0, 0, 0},
+  {1, 0, 0, 0, 0},
+  {1, 1, 0, 0, 0},
+  {1, 1, 1, 0, 0},
+  {1, 1, 1, 1, 0}
+};
 
 int led[10][5][3] = {{{1, 1, 1},
-                      {1, 0, 1},
-                      {1, 0, 1},
-                      {1, 0, 1},
-                      {1, 1, 1}},
-                     {{0, 1, 0},
-                      {0, 1, 0},
-                      {0, 1, 0},
-                      {0, 1, 0},
-                      {0, 1, 0}},
-                     {{1, 1, 1},
-                      {0, 0, 1},
-                      {1, 1, 1},
-                      {1, 0, 0},
-                      {1, 1, 1}},
-                     {{1, 1, 1},
-                      {0, 0, 1},
-                      {1, 1, 1},
-                      {0, 0, 1},
-                      {1, 1, 1}},
-                     {{1, 0, 1},
-                      {1, 0, 1},
-                      {1, 1, 1},
-                      {0, 0, 1},
-                      {0, 0, 1}},
-                     {{1, 1, 1},
-                      {1, 0, 0},
-                      {1, 1, 1},
-                      {0, 0, 1},
-                      {1, 1, 1}},
-                     {{1, 1, 1},
-                      {1, 0, 0},
-                      {1, 1, 1},
-                      {1, 0, 1},
-                      {1, 1, 1}},
-                     {{1, 1, 1},
-                      {0, 0, 1},
-                      {0, 0, 1},
-                      {0, 0, 1},
-                      {0, 0, 1}},
-                     {{1, 1, 1},
-                      {1, 0, 1},
-                      {1, 1, 1},
-                      {1, 0, 1},
-                      {1, 1, 1}},
-                     {{1, 1, 1},
-                      {1, 0, 1},
-                      {1, 1, 1},
-                      {0, 0, 1},
-                      {1, 1, 1}}};
+    {1, 0, 1},
+    {1, 0, 1},
+    {1, 0, 1},
+    {1, 1, 1}
+  },
+  { {0, 1, 0},
+    {0, 1, 0},
+    {0, 1, 0},
+    {0, 1, 0},
+    {0, 1, 0}
+  },
+  { {1, 1, 1},
+    {0, 0, 1},
+    {1, 1, 1},
+    {1, 0, 0},
+    {1, 1, 1}
+  },
+  { {1, 1, 1},
+    {0, 0, 1},
+    {1, 1, 1},
+    {0, 0, 1},
+    {1, 1, 1}
+  },
+  { {1, 0, 1},
+    {1, 0, 1},
+    {1, 1, 1},
+    {0, 0, 1},
+    {0, 0, 1}
+  },
+  { {1, 1, 1},
+    {1, 0, 0},
+    {1, 1, 1},
+    {0, 0, 1},
+    {1, 1, 1}
+  },
+  { {1, 1, 1},
+    {1, 0, 0},
+    {1, 1, 1},
+    {1, 0, 1},
+    {1, 1, 1}
+  },
+  { {1, 1, 1},
+    {0, 0, 1},
+    {0, 0, 1},
+    {0, 0, 1},
+    {0, 0, 1}
+  },
+  { {1, 1, 1},
+    {1, 0, 1},
+    {1, 1, 1},
+    {1, 0, 1},
+    {1, 1, 1}
+  },
+  { {1, 1, 1},
+    {1, 0, 1},
+    {1, 1, 1},
+    {0, 0, 1},
+    {1, 1, 1}
+  }
+};
 
 void setup() {
   pinMode(latchPin, OUTPUT);
-  pinMode(dataPin, OUTPUT);  
+  pinMode(dataPin, OUTPUT);
   pinMode(clockPin, OUTPUT);
   pinMode(buttonPin, INPUT);
   Serial.begin(9600);
 }
 
-void loop() { 
+void loop() {
   determineButtonIntent();
   checkForTimeout();
 }
@@ -107,7 +119,7 @@ void determineButtonIntent() {
   unsigned long currentTime = millis();
   //if the not enough time has passed to be certain of intent...
   if (currentTime - lastDebounceTime <= debounceDelay) {
-    return;  
+    return;
   }
 
   //update the button intent
@@ -120,9 +132,9 @@ void determineButtonIntent() {
 }
 
 void changeButtonToIntent(bool pressed) {
-  if (pressed) { 
+  if (pressed) {
     pressTime = millis();
-    return; 
+    return;
   }
   releaseTime = millis();
   int symbol = (releaseTime - pressTime < dotToDashTime) ? DOT : DASH;
@@ -132,8 +144,8 @@ void changeButtonToIntent(bool pressed) {
       if (i == 4) {
         completedPattern();
       }
-      break;  
-    }  
+      break;
+    }
   }
 }
 
@@ -149,16 +161,18 @@ void completedPattern() {
     }
     if (numeral != -1) {
       break;
-    } 
+    }
   }
-  animateLEDs(numeral);
+  if (numeral != -1) {
+    animateLEDs(numeral);
+  }
   resetPattern();
 }
 
 void resetPattern() {
   for (int i = 0; i < 5; i++) {
     dotDashPattern[i] = -1;
-  }  
+  }
 }
 
 void checkForTimeout() {
@@ -166,17 +180,17 @@ void checkForTimeout() {
     if (millis() - releaseTime > intentTimeout) {
       releaseTime = millis();
       for (int i = 0; i < 5; i++) {
-        dotDashPattern[i] = -1; 
+        dotDashPattern[i] = -1;
       }
-    }  
-  }  
+    }
+  }
 }
 
 void animateLEDs(int numeral) {
   // Using persistence of vision to show digits
   for (int iter = 0; iter < 2000; iter++) {
     for (int j = 0; j < 5; j++) {
-      digitalWrite(latchPin, LOW); 
+      digitalWrite(latchPin, LOW);
       for (int i = 0; i < 8; i++) {
         digitalWrite(clockPin, LOW);
         digitalWrite(dataPin, LOW);
@@ -193,11 +207,11 @@ void animateLEDs(int numeral) {
   }
 
   //clear the display
-  digitalWrite(latchPin, LOW); 
-    for (int i = 0; i < 8; i++) {
-      digitalWrite(clockPin, LOW);
-      digitalWrite(dataPin, LOW);
-      digitalWrite(clockPin, HIGH);
-    }
-    digitalWrite(latchPin, HIGH);
+  digitalWrite(latchPin, LOW);
+  for (int i = 0; i < 8; i++) {
+    digitalWrite(clockPin, LOW);
+    digitalWrite(dataPin, LOW);
+    digitalWrite(clockPin, HIGH);
+  }
+  digitalWrite(latchPin, HIGH);
 }
