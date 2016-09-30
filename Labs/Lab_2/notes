@@ -15,3 +15,71 @@ Latch moves the data from the shift register to the output register.
 
 report
   https://circuits.io/circuits/444111-shift-register
+  https://learn.adafruit.com/adafruit-arduino-lesson-4-eight-leds/breadboard-layout
+
+
+
+
+platform that connects ->
+
+
+
+{{{{{{{{{{{{  5 week winter break  }}}}}}}}}}}}
+
+-> mobile
+  need android
+  need lead developer
+-> front-end
+-> developer evangelism
+
+expertise x product grid - fill in with people
+
+oriley AI conference
+
+cs for all ->
+
+
+(check out the Clarifai)
+
+* need previous experience
+*
+
+cloud vision
+
++++ Structured information +++
+- crash course
+- unique facets
+
+
+
+
+
+
+spotlight
+classpass
+facebook
+  events - coordination
+    mostly because everyone is here
+
+I would like a chatbot that participates in group chats: coordinating arrivals, keeping track of needs, alerting hosts of arrivals, etc. Currently members of the event have to step outside of the event to assume this role, thereby dinishing their participation in the event.
+
+    + event chatbot
+instagram
+  consuming
+  sharing
+vsco
+
+hulu
+  streaming
+  discovery
+
+
+  search -
+
+
+
+
+
+
+
+  Serial.begin(9600);
